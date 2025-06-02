@@ -42,7 +42,7 @@ import Foundation
  Follow up: Can you come up with an algorithm that runs in O(m + n) time?
  */
 
-class Solution {
+class Solution88 {
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var totalIndex = m + n - 1
         var leftIndex = m - 1
@@ -71,7 +71,7 @@ class Solution {
 func testIfBothArrayIsEmpty() {
     var input1: [Int] = []
     var input2: [Int] = []
-    Solution().merge(&input1, 0, input2, 0)
+    Solution88().merge(&input1, 0, input2, 0)
     assert(input1 == [], "Test "+#function+" failed\n")
     print("Test "+#function+"passed\n")
 }
@@ -81,7 +81,7 @@ func testRegularInput() {
     var input2 = [2,5,6]
     let countFirst = 3
     let countSecond = 3
-    Solution().merge(&input1, countFirst, input2, countSecond)
+    Solution88().merge(&input1, countFirst, input2, countSecond)
     assert(input1 == [1,2,2,3,5,6], "Test "+#function+" failed\n")
     print("Test "+#function+" passed\n")
 }
@@ -91,7 +91,7 @@ func testExtraInput() {
     var input2 = [1]
     let countFirst = 0
     let countSecond = 1
-    Solution().merge(&input1, countFirst, input2, countSecond)
+    Solution88().merge(&input1, countFirst, input2, countSecond)
     print(input1)
     assert(input1 == [1], "Test "+#function+" failed\n")
     print("Test "+#function+" passed\n")
@@ -102,7 +102,7 @@ func testSexondExtraInput() {
     var input2 = [1]
     let countFirst = 1
     let countSecond = 1
-    Solution().merge(&input1, countFirst, input2, countSecond)
+    Solution88().merge(&input1, countFirst, input2, countSecond)
     print(input1)
     assert(input1 == [1,2], "Test "+#function+" failed\n")
     print("Test "+#function+" passed\n")
@@ -113,6 +113,7 @@ func runAllTests() {
     testRegularInput()
     testExtraInput()
     testSexondExtraInput()
+    print("All tests passed.")
 }
 
 runAllTests()

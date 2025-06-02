@@ -1,0 +1,9 @@
+# Swift Playground user history
+*.playhistory
+
+# Xcode user-specific data
+*.xcuserdata
+*.xcuserstate
+
+# macOS metadata
+.DS_Store
