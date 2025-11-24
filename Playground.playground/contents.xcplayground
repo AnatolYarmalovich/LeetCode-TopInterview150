@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<playground target-platform="ios" requires-full-environment="false" version="7.0" swift-version="6">
+<playground requires-full-environment="false" target-platform="ios" version="7.0" swift-version="6">
     <pages>
         <page name="121. Best Time to Buy and Sell Stock"/>
         <page name="122. Best Time to Buy and Sell Stock II"/>
@@ -12,5 +12,7 @@
         <page name="80. Remove Duplicates from Sorted Array II"/>
         <page name="88. Merge Sorted Array"/>
         <page name="6. Zigzag Conversion"/>
+        <page name="28. Find the Index of the First Occurrence in a String"/>
+        <page name="68. Text Justification"/>
     </pages>
 </playground>
