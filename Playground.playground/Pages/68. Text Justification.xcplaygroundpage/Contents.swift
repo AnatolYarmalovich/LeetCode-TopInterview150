@@ -62,20 +62,75 @@ import Foundation
 
 class Solution68 {
     func fullJustify(_ words: [String], _ maxWidth: Int) -> [String] {
-        var result: [[String]] = []
-        var line: Int = 0
+        var sortedByLines: [[String]] = []
+        var currentLine: [String] = []
+        var result: [String] = []
+        var currentLength: Int = 0
         
         for word in words {
-            var line = result[line]
-            if line.count + (line.count * ) + word.count >= maxWidth {
-                line += 1
+            let needed = currentLength == 0 ? word.count : currentLength + 1 + word.count 
+            if needed <= maxWidth {
+                currentLine.append(word)
+                currentLength = needed
+            } else {
+                sortedByLines.append(currentLine)
+                
+                currentLine = [word]
+                currentLength = word.count
+            }
+        }
+        
+        if currentLine.isEmpty == false {
+            sortedByLines.append(currentLine)
+        }
+        
+        for (index, line) in sortedByLines.enumerated() {
+            let slots: Int = line.count - 1
+            
+            var lineStr = ""
+            
+            var totalCharacterCount: Int = 0
+            for word in line {
+                totalCharacterCount += word.count
+            }
+            let spacedNeeded: Int = maxWidth - totalCharacterCount
+            
+            if index == sortedByLines.count - 1 || slots == 0 {
+                for word in line {
+                    if lineStr.isEmpty {
+                        lineStr += word 
+                    } else {
+                        lineStr += " "
+                        lineStr += word
+                    }
+                }
+                while lineStr.count < maxWidth {
+                    lineStr += " "
+                }
+                result.append(lineStr)
+            } else {
+                let base = spacedNeeded / slots
+                let extra = spacedNeeded % slots
+                
+                for i in 0..<line.count {
+                    lineStr += line[i]
+                    if i < line.count - 1 {
+                        let toAdd = base + (i < extra ? 1 : 0)
+                        var counter: Int = 0
+                        while counter < toAdd {
+                            lineStr += " "
+                            counter += 1
+                        }
+                    }
+                }
+                result.append(lineStr)
             }
         }
         
         return result
     }
 }
-    
+
 
 func firstTest()  {
     let words: [String] = ["This", "is", "an", "example", "of", "text", "justification."]
@@ -85,7 +140,7 @@ func firstTest()  {
         "This    is    an",
         "example  of text",
         "justification.  "
-        ], "test failed")
+    ], "test failed")
     print("✅ \(#function) passed")
 }
 
@@ -97,7 +152,7 @@ func secondTest()  {
         "What   must   be",
         "acknowledgment  ",
         "shall be        "
-        ], "test failed")
+    ], "test failed")
     print("✅ \(#function) passed")
 }
 
@@ -112,7 +167,7 @@ func thirdTest() {
         "a  computer.  Art is",
         "everything  else  we",
         "do                  "
-        ], "test failed")
+    ], "test failed")
     print("✅ \(#function) passed")
 }
 
