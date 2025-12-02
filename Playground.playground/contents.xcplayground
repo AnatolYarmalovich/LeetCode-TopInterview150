@@ -16,5 +16,6 @@
         <page name="68. Text Justification"/>
         <page name="125. Valid Palindrome"/>
         <page name="392. Is Subsequence"/>
+        <page name="167. Two Sum II - Input Array Is Sorted"/>
     </pages>
 </playground>
