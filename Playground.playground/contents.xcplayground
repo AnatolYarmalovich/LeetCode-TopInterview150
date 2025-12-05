@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<playground version="7.0" swift-version="6" target-platform="ios" requires-full-environment="false">
+<playground target-platform="ios" version="7.0" swift-version="6" requires-full-environment="false">
     <pages>
         <page name="121. Best Time to Buy and Sell Stock"/>
         <page name="122. Best Time to Buy and Sell Stock II"/>
@@ -18,5 +18,6 @@
         <page name="392. Is Subsequence"/>
         <page name="167. Two Sum II - Input Array Is Sorted"/>
         <page name="11. Container With Most Water"/>
+        <page name="15. 3Sum"/>
     </pages>
 </playground>
